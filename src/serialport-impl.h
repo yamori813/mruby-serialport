@@ -27,7 +27,11 @@
 
 #include "mruby.h"
 #include "mruby/string.h"
+#if MRUBY_RELEASE_NO < 40000
 #include "mruby/ext/io.h"
+#else
+#include "mruby/io.h"
+#endif
 #include "serialport.h"
 
 struct modem_params_t {
